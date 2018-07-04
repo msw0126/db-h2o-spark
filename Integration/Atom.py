@@ -7,11 +7,10 @@ from pyspark.sql import SparkSession
 from Integration.LearnMain import learn_main
 from Integration.ActMain import act_main
 from Integration.TestMain import test_main
-from BaseModules.FileIO import *
+from FileIO import *
 
 os.environ['PYTHON_EGG_CACHE'] = '/tmp/.python-eggs/'
 os.environ['PYTHON_EGG_DIR'] = '/tmp/.python-eggs/'
-
 
 def test(spark):
     """
@@ -45,8 +44,7 @@ if __name__ == '__main__':
         .appName("h2o-Atom-Test")\
         .getOrCreate()
 
-    # sparkling water将h2o和spark相结合，在spark平台上运行h2o服务。
-    # hc = H2OContext.getOrCreate(spark)
+    hc = H2OContext.getOrCreate(spark)
 
     argv = sys.argv[1]
 

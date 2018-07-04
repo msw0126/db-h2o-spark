@@ -1,0 +1,39 @@
+{
+ "act_fold_path": "hdfs://node1:8020/taoshu/engine/work_dir/103/AtomAct2/ACT", 
+ "act_data_path": "hdfs://node1:8020/taoshu/engine/work_dir/103/AtomAct2/data.csv", 
+ "algorithm": "RF", 
+ "type_dict": {
+  "v18": "numeric", 
+  "v19": "factor", 
+  "v12": "factor", 
+  "v13": "numeric", 
+  "v10": "factor", 
+  "v11": "numeric", 
+  "v16": "numeric", 
+  "v17": "factor", 
+  "v14": "factor", 
+  "v15": "factor", 
+  "id": "numeric", 
+  "v21": "numeric", 
+  "v20": "factor", 
+  "v1": "factor", 
+  "v2": "numeric", 
+  "v3": "factor", 
+  "v4": "factor", 
+  "v5": "numeric", 
+  "v6": "factor", 
+  "v7": "factor", 
+  "v8": "numeric", 
+  "v9": "factor"
+ }, 
+ "hive_table": "taoshu_db_input.german_credit", 
+ "data_sep_symbol": ",", 
+ "model_path": "hdfs://node1:8020/taoshu/engine/work_dir/103/AtomLearn1/LEARN/Grid_DRF_py_77_sid_87c1_model_python_1530584234373_8_model_3", 
+ "preprocess": {
+  "id_name": "id", 
+  "target_name": "v21", 
+  "fill_dict": {}, 
+  "remove_vars": []
+ }, 
+ "learn_fold_path": "hdfs://node1:8020/taoshu/engine/work_dir/103/AtomLearn1/LEARN"
+}

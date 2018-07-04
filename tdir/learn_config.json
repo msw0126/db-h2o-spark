@@ -1,0 +1,36 @@
+{
+    "max_sample_miss_prop": 0.95,
+    "learn_fold_path": "hdfs://node1:8020/taoshu/engine/work_dir/103/AtomLearn1/LEARN",
+    "cal_statics_universal": true,
+    "target_name": "v21",
+    "cal_statics_sampling": false,
+    "cv_k": 1,
+    "unbalanced_cutoff": 5,
+    "sampling_method": "undersampling",
+    "dict_path": "hive_reader_dict.csv",
+    "max_variable_miss_prop": 0.9,
+    "hive_table": "taoshu_db_input.german_credit",
+    "max_factor_prop": 1000,
+    "hparams": {
+        "ntrees": [
+            50
+        ],
+        "min_rows": [
+            1,
+            2
+        ],
+        "col_sample_rate_per_tree": [
+            1.0
+        ],
+        "max_depth": [
+            5,
+            10
+        ],
+        "sample_rate": [
+            0.63
+        ]
+    },
+    "id_name": "id",
+    "algorithm": "RF",
+    "train_data_path": "hdfs://node1:8020/taoshu/engine/work_dir/103/AtomLearn1/data.csv"
+}

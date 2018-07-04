@@ -1,0 +1,6 @@
+{
+    "test_data_path": "hdfs://node1:8020/taoshu/engine/work_dir/103/AtomTest3/data.csv",
+    "act_fold_path": "hdfs://node1:8020/taoshu/engine/work_dir/103/AtomAct2/ACT",
+    "test_fold_path": "hdfs://node1:8020/taoshu/engine/work_dir/103/AtomTest3/TEST",
+    "hive_table": "taoshu_db_input.german_credit"
+}
