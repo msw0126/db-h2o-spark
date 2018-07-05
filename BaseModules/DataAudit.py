@@ -43,6 +43,7 @@ def check_label(data_df, target_name):
     """
     assert str(target_name) in data_df.col_names, \
         'a column with this target name is not in the dataframe'
+    # 判断target_name列是否含有缺失值
     assert data_df[str(target_name)].nacnt()[0] == 0, \
         'there is null value in label col'
     return True
@@ -102,6 +103,7 @@ def check_varname():
 
 def check_data_vol(data_df, id_name, target_name, row_low_limit=50, col_low_limit=1):
     """
+    判断表的列和行是否足够
     check if data set is big enough
     :param: data_df: a data frame
     :param: row_low_limit: lower limit of number of rows

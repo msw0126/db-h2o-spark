@@ -408,6 +408,7 @@ def grid_search(estimator, hparams=None, search_criteria=None):
     :param search_criteria: criteria for grid search 
     :return: a constructed grid search estimator
     """
+    print estimator
     print hparams
     return H2OGridSearch(model=estimator, hyper_params=hparams, search_criteria=search_criteria)
 

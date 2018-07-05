@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 from BaseModules.DataPreProcess import *
 import json
 import copy
@@ -8,6 +9,105 @@ def learn_cal_summary_statics(data_obj, learn_conf_dict):
     """
     
     :return: 
+    """
+
+    """
+        data_obj: 
+        {
+    	'df': 'data_df' ,
+    	'info': {
+    		'numeric_vars': ['v18', 'v13', 'v11', 'v16', 'v2', 'v5', 'v8'],
+    		'fill_dict': {},
+    		'target_name': 'v21',
+    		'variables': ['v18', 'v19', 'v12', 'v13', 'v10', 'v11', 'v16', 'v17', 'v14', 'v15', 'v20', 'v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9'],
+    		'id_name': 'id',
+    		'ori_type_dict': {
+    			'v18': 'numeric',
+    			'v19': 'factor',
+    			'v12': 'factor',
+    			'v13': 'numeric',
+    			'v10': 'factor',
+    			'v11': 'numeric',
+    			'v16': 'numeric',
+    			'v17': 'factor',
+    			'v14': 'factor',
+    			'v15': 'factor',
+    			'id': 'numeric',
+    			'v21': 'numeric',
+    			'v20': 'factor',
+    			'v1': 'factor',
+    			'v2': 'numeric',
+    			'v3': 'factor',
+    			'v4': 'factor',
+    			'v5': 'numeric',
+    			'v6': 'factor',
+    			'v7': 'factor',
+    			'v8': 'numeric',
+    			'v9': 'factor'
+    		},
+    		'factor_vars': ['v19', 'v12', 'v10', 'v17', 'v14', 'v15', 'v20', 'v1', 'v3', 'v4', 'v6', 'v7', 'v9']
+    	},
+    	'schema': {
+    		'v18': 'numeric',
+    		'v19': 'factor',
+    		'v12': 'factor',
+    		'v13': 'numeric',
+    		'v10': 'factor',
+    		'v11': 'numeric',
+    		'v16': 'numeric',
+    		'v17': 'factor',
+    		'v14': 'factor',
+    		'v15': 'factor',
+    		'id': 'numeric',
+    		'v21': 'numeric',
+    		'v20': 'factor',
+    		'v1': 'factor',
+    		'v2': 'numeric',
+    		'v3': 'factor',
+    		'v4': 'factor',
+    		'v5': 'numeric',
+    		'v6': 'factor',
+    		'v7': 'factor',
+    		'v8': 'numeric',
+    		'v9': 'factor'
+    	}
+    }
+        """
+    """
+    learn_conf_dict:
+    {
+    'data_missing_symbol': ['null', 'Null', 'NULL', 'NaN', 'nan', 'Na', 'NA', 'N/A', 'None', 'NONE', '\\N', '', '?'],
+    'target_name': 'v21',
+    'train_conf': {
+        'cv_k': 1,
+        'hparams': {
+            'min_rows': [1, 2],
+            'ntrees': [50],
+            'sample_rate': [0.63],
+            'max_depth': [5, 10],
+            'col_sample_rate_per_tree': [1.0]
+        },
+        'algorithm': 'RF'
+    },
+    'hive_table': 'taoshu_db_input.german_credit',
+    'id_name': 'id',
+    'train_data_path': 'hdfs://node1:8020/taoshu/engine/work_dir/103/AtomLearn1/data.csv',
+    'data_sep_symbol': ',',
+    'data_types': None,
+    'preprocess_conf': {
+        'cal_statics_sampling': False,
+        'max_sample_miss_prop': 0.95,
+        'fill_dict': None,
+        'sampling_method': 'undersampling',
+        'cal_iv': None,
+        'max_factor_levels_prop': 1000,
+        'unbalanced_cutoff': 5,
+        'cal_statics_universal': True,
+        'max_levels_amount': 200,
+        'max_variable_miss_prop': 0.9
+    },
+    'learn_fold_path': 'hdfs://node1:8020/taoshu/engine/work_dir/103/AtomLearn1/LEARN'
+}
     """
 
     if learn_conf_dict['preprocess_conf']['cal_statics_sampling']:
@@ -61,11 +161,13 @@ def learn_cal_summary_statics(data_obj, learn_conf_dict):
 
 def learn_cal_samples_miss(data_obj):
     """
-    
-    :return: 
+
+    :param data_obj:
+    :return:
     """
     print '\n--- calculate missing variable number of each sample ---'
     variables = data_obj['info']['variables']
+    # 每个样本的缺失值统计。
     row_miss_lst = cal_samples_miss(data_obj['df'][:, variables])
     data_obj['info']['row_miss_lst'] = row_miss_lst
     # print row_miss_lst
@@ -74,7 +176,7 @@ def learn_cal_samples_miss(data_obj):
 
 def learn_cal_vars_levels(data_obj, learn_conf_dict):
     """
-    
+    计算因子变量的级别数
     :return: 
     """
     print '\n--- calculate level numbers of factor variables ---'
@@ -96,7 +198,7 @@ def learn_cal_vars_levels(data_obj, learn_conf_dict):
 
 def learn_cal_vars_miss(data_obj, learn_conf_dict):
     """
-    
+    计算每个变量的样本数量
     :return: 
     """
     print '\n--- calculate missing sample number of each variable ---'
@@ -117,7 +219,7 @@ def learn_cal_vars_miss(data_obj, learn_conf_dict):
 
 def learn_cal_vars_std(data_obj, learn_conf_dict):
     """
-    
+    计算数值变量的标准差
     :return: 
     """
     print '\n--- calculate standard deviation of numeric variable ---'
@@ -147,6 +249,7 @@ def learn_del_samples(data_obj, learn_conf_dict):
     variables = data_obj['info']['variables']
     del_threshold_num = int(len(variables) * del_threshold_ratio)
     row_miss_lst = data_obj['info']['row_miss_lst']
+    # 如果某一个样本的缺失值过多，就把这行样本删除
     for i in range(len(row_miss_lst)):
         if row_miss_lst[i] > del_threshold_num:
             remove_indexs.append(i)
@@ -164,7 +267,7 @@ def learn_del_vars(data_obj, learn_conf_dict, nrows):
     print '\n--- test delete variables ---'
     remove_vars = list()
 
-    # # based on factor levels amount
+    # # based on factor levels amount(基于因子等级的数量）
     factor_levels_dict = data_obj['info']['levels_dict']
     del_threshold_ratio = learn_conf_dict['preprocess_conf']['max_factor_levels_prop']
     del_threshold_num = int(nrows * del_threshold_ratio) if del_threshold_ratio <= 1 else del_threshold_ratio
@@ -174,7 +277,7 @@ def learn_del_vars(data_obj, learn_conf_dict, nrows):
         if isinstance(factor_levels_dict[var], list) and len(factor_levels_dict[var]) == 1 and data_obj['info']['col_miss_dict'][var] == 0:
             remove_vars.append(var)
 
-    # # based on missing amount
+    # # based on missing amount（如果这一列的缺失值数量超过%90）
     factor_miss_dict = data_obj['info']['col_miss_dict']
     del_threshold_ratio = learn_conf_dict['preprocess_conf']['max_variable_miss_prop']
     del_threshold_num = int(nrows * del_threshold_ratio)
@@ -249,7 +352,7 @@ def learn_under_sampling(data_obj, learn_conf_dict):
         # data_df = data_df[data_df['index_tag'] != 0]
         # data_df.drop(['index_tag'])
 
-        ori_names  =data_df.names
+        ori_names = data_df.names
         data_df['index_tag'] = 1
         cum_1 = data_df['index_tag'].cumsum()
         cum_1.set_name(col=cum_1.names[0], name='index_tag')
@@ -288,16 +391,17 @@ def learn_under_sampling(data_obj, learn_conf_dict):
 
 def learn_fill_missing_value(data_obj, learn_conf_dict):
     """
-    
+    缺失值填充
     :return: 
     """
     print '\n--- fill missing values ---'
     if learn_conf_dict['train_conf']['algorithm'] == 'NB':
         tmp_fill_dict = dict()
+        # factor字段名称list
         factor_vars = data_obj['info']['factor_vars']
+        # numeric字段名称list
         numeric_vars = data_obj['info']['numeric_vars']
         if learn_conf_dict['preprocess_conf']['cal_statics_universal']:
-
             tmp_dict = data_obj['info']['factor_statics']
             for var in factor_vars:
                 tmp_fill_dict[var] = tmp_dict[var]['most_freq_level']
@@ -343,7 +447,6 @@ def learn_cal_iv(data_obj, learn_conf_dict):
     iv_list = list()
     woe_list = list()
     if learn_conf_dict['preprocess_conf']['cal_iv']:
-
         data_df = data_obj['df']
         factor_vars = data_obj['info']['factor_vars']
         numeric_vars = data_obj['info']['numeric_vars']

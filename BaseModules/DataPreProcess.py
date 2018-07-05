@@ -149,11 +149,15 @@ def label_static(label_col):
     :return: a count dict
     """
     label_col = label_col.asfactor()
+    # count_dict : {'1': '700', '0': '300'}
     count_dict = dict(h2o.as_list(label_col.group_by(by=label_col.names[0]).count().get_frame(),
                                   use_pandas=False, header=False))
+
+    # count_dict: {'1': 700, '0': 300}
     for key in count_dict.keys():
         if count_dict[key] is not None:
             count_dict[key] = int(count_dict[key])
+
     return count_dict
 
 

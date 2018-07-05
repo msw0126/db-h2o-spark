@@ -98,7 +98,9 @@ def learn_data_import_audit(spark, learn_conf_dict, type_dict):
     print '\n--- importing data ---'
     if learn_conf_dict['hive_table'] is not None:
         # hive_to_hdfs(spark, learn_conf_dict['hive_table'], learn_conf_dict['train_data_path'])
+        # data_df: 是表的所有内容
         data_df = hive_to_hdfs(spark, learn_conf_dict['hive_table'])
+        # data_obj： {'df': data_df, 'schema': type_dict, 'info': dict()}
         data_obj = transfer_sparkdf_as_h2odf(data_df, type_dict)
     else:
         data_obj = import_data_as_frame(data_path=learn_conf_dict['train_data_path'],
@@ -118,6 +120,7 @@ def learn_data_import_audit(spark, learn_conf_dict, type_dict):
         print check_label(data_obj['df'], learn_conf_dict['target_name'])
 
     print '\n--- test data volume checking ---'
+    # 判断训练数据的表，列是否大于2，行是否大于50行
     print check_data_vol(data_obj['df'],
                          id_name=learn_conf_dict['id_name'],
                          target_name=learn_conf_dict['target_name'],
@@ -131,7 +134,7 @@ def learn_preprocess(data_obj, learn_conf_dict):
     data preprocess
     :return: 
     """
-
+    # data_obj['info']： {'ori_type_dict': {'v18': 'numeric', 'v19': 'factor', 'v12': 'factor', 'v13': 'numeric', 'v10': 'factor', 'v11': 'numeric', 'v16': 'numeric', 'v17': 'factor', 'v14': 'factor', 'v15': 'factor', 'id': 'numeric', 'v21': 'numeric', 'v20': 'factor', 'v1': 'factor', 'v2': 'numeric', 'v3': 'factor', 'v4': 'factor', 'v5': 'numeric', 'v6': 'factor', 'v7': 'factor', 'v8': 'numeric', 'v9': 'factor'}}
     data_obj['info']['ori_type_dict'] = copy.deepcopy(data_obj['schema'])
     id_name = learn_conf_dict['id_name']
     target_name = learn_conf_dict['target_name']
@@ -143,13 +146,24 @@ def learn_preprocess(data_obj, learn_conf_dict):
     ori_ncols = data_obj['df'].shape[1]
     report_str += 'original sample amount: ' + str(ori_nrows) + '\n'
     report_str += 'original variable amount: ' + str(ori_ncols) + '\n\n'
+    """
+    report_str = \
+    id name: id
+    target name: v21
 
+    original sample amount: 1000
+    original variable amount: 22
+    """
+
+    # 删除id和target字段
     variables = data_obj['df'].names
     if id_name:
         variables.remove(id_name)
     if target_name:
         variables.remove(target_name)
 
+    # data_obj['schema'] {'v18': 'numeric', 'v19': 'factor', 'v12': 'factor', 'v13': 'numeric', 'v10': 'factor', 'v11': 'numeric', 'v16': 'numeric', 'v17': 'factor', 'v14': 'factor', 'v15': 'factor', 'id': 'numeric', 'v21': 'numeric', 'v20': 'factor', 'v1': 'factor', 'v2': 'numeric', 'v3': 'factor', 'v4': 'factor', 'v5': 'numeric', 'v6': 'factor', 'v7': 'factor', 'v8': 'numeric', 'v9': 'factor'}
+    # 得到字段类型分别为numeric和factor的字段名列表
     numeric_vars = [i for i in data_obj['schema'].keys() if data_obj['schema'][i] == 'numeric' and i in variables]
     factor_vars = [i for i in data_obj['schema'].keys() if data_obj['schema'][i] == 'factor' and i in variables]
 
@@ -159,6 +173,7 @@ def learn_preprocess(data_obj, learn_conf_dict):
     data_obj['info']['factor_vars'] = factor_vars
     data_obj['info']['id_name'] = id_name
     data_obj['info']['target_name'] = target_name
+
     if 'fill_dict' in learn_conf_dict['preprocess_conf'].keys():
         fill_dict = learn_conf_dict['preprocess_conf']['fill_dict']
         data_obj['info']['fill_dict'] = fill_dict if fill_dict is not None else dict()
@@ -167,34 +182,46 @@ def learn_preprocess(data_obj, learn_conf_dict):
 
     # process id and target cols convert to factors
     print '\n--- process id label type convert to factor ---'
+    # 把表的id、target字段转换为factor类型
     data_obj['df'] = process_id_label_type(data_obj['df'], id_name, target_name)
 
     if target_name:
+        # lable_dict: {'1': 700, '0': 300}
         label_dict = label_static(data_obj['df'][target_name])
         for label in label_dict.keys():
             report_str += 'original label ' + str(label) + ' amount: ' + str(label_dict[label]) + '\n'
         report_str += '\n'
 
+
     # cal statics
     # # set sampling for cal statics
+    """
+    numeric_statics_list: [['variable', 'max', 'min', 'mean', 'sigma', 'median', 'missing_count'], [u'v18', 2.0, 1.0, 1.1549999999999991, 0.3620857717531942, 1.0, 0],
+    factor_statics_list: [['variable', 'level_num', 'missing_count', 'most_freq_level', 'levels'], [u'v19', 2, 0, 'A191', u'A191|A192']
+    """
     data_obj, numeric_statics_list, factor_statics_list = learn_cal_summary_statics(data_obj, learn_conf_dict)
 
     # cal missing values row wise
+    # 每个样本的缺失值统计。data_obj['info']['row_miss_lst'] = row_miss_lst
     data_obj = learn_cal_samples_miss(data_obj)
 
-    # cal distinct levels amount for factors
+    # cal distinct levels amount for factors(计算因子变量的级别数)
+    # levels_dict[var] = data_obj['info']['factor_statics'][var]['levels']
+    # data_obj['info']['levels_dict'] = levels_dict
     data_obj = learn_cal_vars_levels(data_obj, learn_conf_dict)
 
-    # cal missing values col wise
+    # cal missing values col wise(增加每列与缺失值数量的字典)
+    # data_obj['info']['col_miss_dict'] = col_miss_dict
     data_obj = learn_cal_vars_miss(data_obj, learn_conf_dict)
 
-    # cal std values
+    # cal std values(计算数值变量的标准差)
+    # data_obj['info']['col_std_dict'] = col_std_dict
     data_obj = learn_cal_vars_std(data_obj, learn_conf_dict)
 
-    # delete rows(samples)
+    # delete rows(samples)(如果某一个样本的缺失值过多，就把这行样本删除)
     data_obj = learn_del_samples(data_obj, learn_conf_dict)
 
-    # delete cols(variables)
+    # delete cols(variables)(由于几种原因，删除某些列)
     data_obj = learn_del_vars(data_obj, learn_conf_dict, ori_nrows)
     report_str += 'removed variable: ' + str(data_obj['info']['remove_vars']) + '\n\n'
 
@@ -204,7 +231,7 @@ def learn_preprocess(data_obj, learn_conf_dict):
     report_str += 'sample amount: ' + str(nrows_1) + '\n'
     report_str += 'variable amount: ' + str(ncols_1) + '\n\n'
 
-    # under-sampling
+    # under-sampling(如果正负样本差别太大，会删除大部分的某样本比较多的数据，维持正负样本在正常比例。如果差异不大，会直接返回)
     if target_name and learn_conf_dict['preprocess_conf']['sampling_method'] == 'undersampling':
         data_obj = learn_under_sampling(data_obj, learn_conf_dict)
 
@@ -215,7 +242,7 @@ def learn_preprocess(data_obj, learn_conf_dict):
             report_str += 'label ' + str(label) + ' amount: ' + str(label_dict[label]) + '\n'
         report_str += '\n'
 
-    # fill missing values
+    # fill missing values（填充缺失值）
     data_obj = learn_fill_missing_value(data_obj, learn_conf_dict)
 
     # cal iv value
@@ -226,7 +253,6 @@ def learn_preprocess(data_obj, learn_conf_dict):
 
     # reduce levels amount
     # data_obj = learn_reduce_levels(data_obj, learn_conf_dict)
-
     return data_obj, report_str, numeric_statics_list, factor_statics_list, iv_list, woe_list
 
 
@@ -259,7 +285,7 @@ def learn_train(train_df, x, y, learn_conf_dict):
     algo = learn_conf_dict['train_conf']['algorithm']
 
     if algo in ['DL', 'LR', 'GBM', 'NB', 'RF']:
-
+        # 训练模型
         trained_model, xval, valid = learn_train_single_classification_model(train_df=train_df, x=x, y=y,
                                                                              learn_conf_dict=learn_conf_dict)
 
@@ -357,17 +383,23 @@ def learn_main(spark, config_filename):
     print "SuperAtom 20180125"
     sc = spark.sparkContext
 
-    # parse configuration file
+    # parse configuration file(解析配置文件)
+    """
+    learn_conf_dict: {'data_missing_symbol': ['null', 'Null', 'NULL', 'NaN', 'nan', 'Na', 'NA', 'N/A', 'None', 'NONE', '\\N', '', '?'], 'target_name': 'v21', 'train_conf': {'cv_k': 1, 'hparams': {'min_rows': [1, 2], 'ntrees': [50], 'sample_rate': [0.63], 'max_depth': [5, 10], 'col_sample_rate_per_tree': [1.0]}, 'algorithm': 'RF'}, 'hive_table': 'taoshu_db_input.german_credit', 'id_name': 'id', 'train_data_path': 'hdfs://node1:8020/taoshu/engine/work_dir/103/AtomLearn1/data.csv', 'data_sep_symbol': ',', 'data_types': None, 'preprocess_conf': {'cal_statics_sampling': False, 'max_sample_miss_prop': 0.95, 'fill_dict': None, 'sampling_method': 'undersampling', 'cal_iv': None, 'max_factor_levels_prop': 1000, 'unbalanced_cutoff': 5, 'cal_statics_universal': True, 'max_levels_amount': 200, 'max_variable_miss_prop': 0.9}, 'learn_fold_path': 'hdfs://node1:8020/taoshu/engine/work_dir/103/AtomLearn1/LEARN'}
+    type_dict: {'v18': 'numeric', 'v19': 'factor', 'v12': 'factor', 'v13': 'numeric', 'v10': 'factor', 'v11': 'numeric', 'v16': 'numeric', 'v17': 'factor', 'v14': 'factor', 'v15': 'factor', 'id': 'numeric', 'v21': 'numeric', 'v20': 'factor', 'v1': 'factor', 'v2': 'numeric', 'v3': 'factor', 'v4': 'factor', 'v5': 'numeric', 'v6': 'factor', 'v7': 'factor', 'v8': 'numeric', 'v9': 'factor'}
+    col_name_lst: ['id', 'v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20', 'v21']
+    """
     learn_conf_dict, type_dict, col_name_lst = learn_configure(config_filename)
     learn_fold_path = learn_conf_dict['learn_fold_path']
 
-    # create learn directory
+    # create learn directory(创建learn的HDFS工作目录)
     make_dir(sc, learn_fold_path)
 
-    # import data set as a data frame and conduct  data audit
+    # import data set as a data frame and conduct  data audit（导入数据，并对数据进行检查）
+    # data_obj： {'df': data_df, 'schema': type_dict, 'info': dict()}， data_df： 是表格的所有数据，并按type进行排序
     data_obj = learn_data_import_audit(spark, learn_conf_dict, type_dict)
 
-    # conduct preprocess
+    # conduct preprocess(进行数据预处理)
     data_obj, process_report, numeric_statics_list, factor_statics_list, iv_list, woe_list \
         = learn_preprocess(data_obj, learn_conf_dict)
 

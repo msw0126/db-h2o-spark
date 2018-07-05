@@ -32,7 +32,7 @@ command = [
         "--driver-memory", "1G",
         "--num-executors", "1",
         "--executor-memory", "1G",
-        "F:\\learn\\db-h2o-spark\\Atom.py", "Act"
+        "F:\\learn\\db-h2o-spark\\Atom.py", "Learn"
     ]
 print( " ".join( command ) )
 print( os.path.dirname( os.path.realpath( sys.argv[0] ) ) )

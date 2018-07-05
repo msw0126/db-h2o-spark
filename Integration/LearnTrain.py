@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 import datetime
 from BaseModules.Modeling import *
 
@@ -21,16 +22,15 @@ def learn_train_single_classification_model(train_df, x, y, learn_conf_dict):
         train_df, valid_df = train_df.split_frame(ratios=[0.7])
 
     sample_size = train_df.shape[0]
-
     print '\n===== train %s algorithm =====' % algo
     start_time = datetime.datetime.now()
     print start_time
 
     estimator, hparams = get_algorithm_estimator(algo, sample_size=sample_size, xval=xval,
                                                  nfolds=cv_k, hparams=hparams)
-
     gs_model = grid_search(estimator, hparams)
     trained_gs_model = training(gs_model, x=x, y=y, train_data=train_df, valid_data=valid_df)
+    # 根据网格搜索，得到最好的模型
     trained_model = get_gridsearch_best(trained_gs_model, metric='auc')
 
     end_time = datetime.datetime.now()

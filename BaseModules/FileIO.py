@@ -278,13 +278,14 @@ def import_data_as_frame(data_path, type_dict=None, sep=',', col_name_lst=None, 
 
 def transfer_sparkdf_as_h2odf(data_df, type_dict=None):
     """
+    对每列数据定义类型
     """
     for var in type_dict.keys():
         if type_dict[var] == 'numeric':
             data_df[var] = data_df[var].asnumeric()
         elif type_dict[var] == 'factor':
             data_df[var] =data_df[var].ascharacter().asfactor()
-
+    # 使data_df每列的排序，按照list(type_dict.keys())的顺序来。
     data_df = data_df[:, list(type_dict.keys())]
     data_obj = {'df': data_df, 'schema': type_dict, 'info': dict()}
 

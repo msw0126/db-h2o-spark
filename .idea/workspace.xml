@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b80e099d-0ecc-4aac-86c7-d0e25c145b41" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Submit.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tdir/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tdir/act_config.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tdir/learn_config.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tdir/test_.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zip.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Atom.py" afterPath="$PROJECT_DIR$/Atom.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Atom.zip" afterPath="$PROJECT_DIR$/backups_Atom/Atom.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Atom.zip" afterPath="$PROJECT_DIR$/Atom.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseModules/DataAudit.py" afterPath="$PROJECT_DIR$/BaseModules/DataAudit.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseModules/DataPreProcess.py" afterPath="$PROJECT_DIR$/BaseModules/DataPreProcess.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseModules/FileIO.py" afterPath="$PROJECT_DIR$/BaseModules/FileIO.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseModules/Modeling.py" afterPath="$PROJECT_DIR$/BaseModules/Modeling.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Integration/LearnMain.py" afterPath="$PROJECT_DIR$/Integration/LearnMain.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Integration/LearnPreprocess.py" afterPath="$PROJECT_DIR$/Integration/LearnPreprocess.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Integration/LearnTrain.py" afterPath="$PROJECT_DIR$/Integration/LearnTrain.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Submit.py" afterPath="$PROJECT_DIR$/Submit.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tdir/learn_config.json" afterPath="$PROJECT_DIR$/tdir/learn_config.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,31 +25,31 @@
     <SUITE FILE_PATH="coverage/db_h2o_spark$spark_test.coverage" NAME="spark_test Coverage Results" MODIFIED="1530520704525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/db_h2o_spark$Nosetests_in_Atom_py.coverage" NAME="Nosetests in Atom.py Coverage Results" MODIFIED="1530516445896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/db_h2o_spark$LearnMain.coverage" NAME="LearnMain Coverage Results" MODIFIED="1530605768070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Integration" />
-    <SUITE FILE_PATH="coverage/db_h2o_spark$zip.coverage" NAME="zip Coverage Results" MODIFIED="1530613558246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/db_h2o_spark$Submit.coverage" NAME="Submit Coverage Results" MODIFIED="1530613561806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/db_h2o_spark$zip.coverage" NAME="zip Coverage Results" MODIFIED="1530760370763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/db_h2o_spark$Submit.coverage" NAME="Submit Coverage Results" MODIFIED="1530760373444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/db_h2o_spark$Nosetests_for_Atom_test.coverage" NAME="Nosetests for Atom.test Coverage Results" MODIFIED="1530525019823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/db_h2o_spark$ActMain.coverage" NAME="ActMain Coverage Results" MODIFIED="1530608899926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Integration" />
     <SUITE FILE_PATH="coverage/db_h2o_spark$test_.coverage" NAME="test_ Coverage Results" MODIFIED="1530588481795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tdir" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Atom.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Atom.py">
+      <file leaf-file-name="LearnMain.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Integration/LearnMain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1250">
-              <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+            <state relative-caret-position="200">
+              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
               <folding>
-                <element signature="e#23#33#0" expanded="true" />
+                <element signature="e#11297#11319#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LearnMain.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Integration/LearnMain.py">
+      <file leaf-file-name="Report.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BaseModules/Report.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="260" column="47" lean-forward="true" selection-start-line="260" selection-start-column="47" selection-end-line="260" selection-end-column="47" />
+            <state relative-caret-position="-1389">
+              <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -56,39 +58,11 @@
       <file leaf-file-name="LearnTrain.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Integration/LearnTrain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1825">
-              <caret line="74" column="54" lean-forward="false" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestMain.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Integration/TestMain.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3575">
-              <caret line="147" column="4" lean-forward="false" selection-start-line="147" selection-start-column="4" selection-end-line="147" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pkg_resources.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg_resources.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65725">
-              <caret line="2629" column="26" lean-forward="false" selection-start-line="2629" selection-start-column="26" selection-end-line="2629" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="h2o.py" pinned="false" current-in-tab="false">
-        <entry file="file://F:/tools/anaconda2/Lib/site-packages/h2o/h2o.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23475">
-              <caret line="977" column="4" lean-forward="false" selection-start-line="977" selection-start-column="4" selection-end-line="977" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="25">
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding>
+                <element signature="e#23#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,8 +70,8 @@
       <file leaf-file-name="Modeling.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BaseModules/Modeling.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10800">
-              <caret line="440" column="4" lean-forward="false" selection-start-line="440" selection-start-column="4" selection-end-line="440" selection-end-column="4" />
+            <state relative-caret-position="67">
+              <caret line="415" column="4" lean-forward="false" selection-start-line="415" selection-start-column="4" selection-end-line="415" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -106,9 +80,45 @@
       <file leaf-file-name="grid_search.py" pinned="false" current-in-tab="false">
         <entry file="file://F:/tools/anaconda2/Lib/site-packages/h2o/grid/grid_search.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18700">
+            <state relative-caret-position="25">
               <caret line="763" column="8" lean-forward="false" selection-start-line="763" selection-start-column="8" selection-end-line="763" selection-end-column="8" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LearnPreprocess.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Integration/LearnPreprocess.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="94">
+              <caret line="391" column="4" lean-forward="false" selection-start-line="391" selection-start-column="4" selection-end-line="391" selection-end-column="4" />
+              <folding>
+                <element signature="e#23#63#0" expanded="true" />
+                <element signature="e#11865#11892#0" expanded="false" />
+                <element signature="e#13586#13643#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataPreProcess.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BaseModules/DataPreProcess.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="254" column="4" lean-forward="false" selection-start-line="254" selection-start-column="4" selection-end-line="254" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileIO.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BaseModules/FileIO.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2950">
+              <caret line="125" column="4" lean-forward="false" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
+              <folding>
+                <marker date="1530670890895" expanded="true" signature="9649:9663" ph="select * fro... missing_value" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,8 +126,8 @@
       <file leaf-file-name="Submit.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Submit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" column="49" lean-forward="false" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+            <state relative-caret-position="525">
+              <caret line="21" column="11" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -126,8 +136,8 @@
       <file leaf-file-name="zip.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zip.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="650">
-              <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+            <state relative-caret-position="400">
+              <caret line="16" column="48" lean-forward="false" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -149,6 +159,9 @@
       <find>hc</find>
       <find>random_forest</find>
       <find>algo</find>
+      <find>preprocess_conf</find>
+      <find>max_factor_levels_prop</find>
+      <find>search_criteria</find>
     </findStrings>
     <replaceStrings>
       <replace>\\</replace>
@@ -167,12 +180,16 @@
         <option value="$PROJECT_DIR$/zip.py" />
         <option value="$PROJECT_DIR$/Atom.py" />
         <option value="$PROJECT_DIR$/tdir/test_.py" />
-        <option value="$PROJECT_DIR$/BaseModules/FileIO.py" />
-        <option value="$PROJECT_DIR$/Integration/LearnMain.py" />
-        <option value="$PROJECT_DIR$/Submit.py" />
         <option value="$PROJECT_DIR$/Integration/ActMain.py" />
         <option value="$PROJECT_DIR$/Integration/TestMain.py" />
+        <option value="$PROJECT_DIR$/Submit.py" />
+        <option value="$PROJECT_DIR$/BaseModules/FileIO.py" />
+        <option value="$PROJECT_DIR$/BaseModules/DataAudit.py" />
+        <option value="$PROJECT_DIR$/BaseModules/DataPreProcess.py" />
+        <option value="$PROJECT_DIR$/Integration/LearnPreprocess.py" />
+        <option value="$PROJECT_DIR$/BaseModules/Modeling.py" />
         <option value="$PROJECT_DIR$/Integration/LearnTrain.py" />
+        <option value="$PROJECT_DIR$/Integration/LearnMain.py" />
       </list>
     </option>
   </component>
@@ -182,11 +199,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="374" />
-    <option name="y" value="79" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="378" />
+    <option name="y" value="73" />
     <option name="width" value="1462" />
-    <option name="height" value="819" />
+    <option name="height" value="880" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -206,7 +223,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -214,11 +230,17 @@
               <item name="db-h2o-spark" type="b2602c69:ProjectViewProjectNode" />
               <item name="db-h2o-spark" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="db-h2o-spark" type="b2602c69:ProjectViewProjectNode" />
+              <item name="db-h2o-spark" type="462c0819:PsiDirectoryNode" />
+              <item name="tdir" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -383,20 +405,20 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22300771" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22622108" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4972973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5405405" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42297298" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39942113" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39864865" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -420,21 +442,13 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Atom.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#23#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Integration/LearnMain.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6150">
           <caret line="252" column="4" lean-forward="false" selection-start-line="252" selection-start-column="4" selection-end-line="252" selection-end-column="4" />
-          <folding />
+          <folding>
+            <element signature="e#11297#11319#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -450,7 +464,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3575">
           <caret line="147" column="4" lean-forward="false" selection-start-line="147" selection-start-column="4" selection-end-line="147" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -458,7 +471,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="65725">
           <caret line="2629" column="26" lean-forward="true" selection-start-line="2629" selection-start-column="26" selection-end-line="2629" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -507,7 +519,7 @@
         <state relative-caret-position="1175">
           <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding>
-            <element signature="e#23#33#0" expanded="true" />
+            <element signature="e#23#33#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -516,7 +528,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="48" lean-forward="false" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-          <folding />
+          <folding>
+            <element signature="e#11297#11319#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -524,6 +538,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7375">
           <caret line="302" column="19" lean-forward="false" selection-start-line="302" selection-start-column="9" selection-end-line="302" selection-end-column="19" />
+          <folding>
+            <marker date="1530670890895" expanded="true" signature="9649:9663" ph="select * fro... missing_value" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -539,6 +556,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding>
+            <marker date="1530755411132" expanded="true" signature="0:915" ph="{&quot;learn_fold_path&quot;: &quot;hdfs://node1:8020/taoshu/engine/work_dir/104/AtomLearn1/LEARN&quot;...}" />
+            <marker date="1530755411132" expanded="true" signature="514:810" ph="{...}" />
+            <marker date="1530755411132" expanded="true" signature="534:560" ph="[...]" />
+            <marker date="1530755411132" expanded="true" signature="583:624" ph="[...]" />
+            <marker date="1530755411132" expanded="true" signature="646:686" ph="[...]" />
+            <marker date="1530755411132" expanded="true" signature="711:739" ph="[...]" />
+            <marker date="1530755411132" expanded="true" signature="777:804" ph="[...]" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -569,7 +595,7 @@
         <state relative-caret-position="275">
           <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
           <folding>
-            <element signature="e#23#33#0" expanded="true" />
+            <element signature="e#23#33#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -586,6 +612,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+          <folding>
+            <marker date="1530755411132" expanded="true" signature="0:915" ph="{&quot;learn_fold_path&quot;: &quot;hdfs://node1:8020/taoshu/engine/work_dir/104/AtomLearn1/LEARN&quot;...}" />
+            <marker date="1530755411132" expanded="true" signature="514:810" ph="{...}" />
+            <marker date="1530755411132" expanded="true" signature="534:560" ph="[...]" />
+            <marker date="1530755411132" expanded="true" signature="583:624" ph="[...]" />
+            <marker date="1530755411132" expanded="true" signature="646:686" ph="[...]" />
+            <marker date="1530755411132" expanded="true" signature="711:739" ph="[...]" />
+            <marker date="1530755411132" expanded="true" signature="777:804" ph="[...]" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -593,7 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -606,13 +640,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tdir/prediction.csv" />
-    <entry file="file://$PROJECT_DIR$/tdir/learn_config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log4j.properties" />
     <entry file="file://$PROJECT_DIR$/test/spark_test.py" />
     <entry file="file://$PROJECT_DIR$/tdir/act_config.json">
@@ -636,13 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BaseModules/DataAudit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="102" column="4" lean-forward="false" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tdir/test_config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -650,24 +670,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Integration/LearnPreprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="74" column="4" lean-forward="false" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/tools/anaconda2/Lib/site-packages/h2o/frame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="1735" column="8" lean-forward="false" selection-start-line="1735" selection-start-column="8" selection-end-line="1735" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/-874932841/__builtin__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="185" column="4" lean-forward="false" selection-start-line="185" selection-start-column="4" selection-end-line="185" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -675,27 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-406">
           <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BaseModules/DataPreProcess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="217" column="4" lean-forward="false" selection-start-line="217" selection-start-column="4" selection-end-line="217" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BaseModules/FileIO.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-64">
-          <caret line="180" column="4" lean-forward="false" selection-start-line="180" selection-start-column="4" selection-end-line="180" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Integration/ActMain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-617">
-          <caret line="108" column="4" lean-forward="false" selection-start-line="108" selection-start-column="4" selection-end-line="108" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -711,7 +697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3575">
           <caret line="147" column="4" lean-forward="false" selection-start-line="147" selection-start-column="4" selection-end-line="147" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -719,46 +704,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="65725">
           <caret line="2629" column="26" lean-forward="false" selection-start-line="2629" selection-start-column="26" selection-end-line="2629" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://F:/tools/anaconda2/Lib/site-packages/h2o/grid/grid_search.py">
+    <entry file="file://$PROJECT_DIR$/BaseModules/DataAudit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18700">
-          <caret line="763" column="8" lean-forward="false" selection-start-line="763" selection-start-column="8" selection-end-line="763" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BaseModules/Modeling.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10800">
-          <caret line="440" column="4" lean-forward="false" selection-start-line="440" selection-start-column="4" selection-end-line="440" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Integration/LearnTrain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1825">
-          <caret line="74" column="54" lean-forward="false" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zip.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Submit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="49" lean-forward="false" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+        <state relative-caret-position="28">
+          <caret line="103" column="4" lean-forward="false" selection-start-line="103" selection-start-column="4" selection-end-line="103" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -766,18 +718,132 @@
     <entry file="file://$PROJECT_DIR$/Atom.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1250">
-          <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+          <caret line="58" column="14" lean-forward="false" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
           <folding>
-            <element signature="e#23#33#0" expanded="true" />
+            <element signature="e#23#33#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Integration/ActMain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2625">
+          <caret line="108" column="4" lean-forward="false" selection-start-line="108" selection-start-column="4" selection-end-line="108" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tdir/learn_config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="58" lean-forward="false" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
+          <folding>
+            <marker date="1530755411132" expanded="true" signature="0:915" ph="{&quot;learn_fold_path&quot;: &quot;hdfs://node1:8020/taoshu/engine/work_dir/104/AtomLearn1/LEARN&quot;...}" />
+            <marker date="1530755411132" expanded="true" signature="514:810" ph="{...}" />
+            <marker date="1530755411132" expanded="true" signature="534:560" ph="[...]" />
+            <marker date="1530755411132" expanded="true" signature="583:624" ph="[...]" />
+            <marker date="1530755411132" expanded="true" signature="646:686" ph="[...]" />
+            <marker date="1530755411132" expanded="true" signature="711:739" ph="[...]" />
+            <marker date="1530755411132" expanded="true" signature="777:804" ph="[...]" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/tools/anaconda2/Lib/site-packages/h2o/frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42675">
+          <caret line="1735" column="8" lean-forward="false" selection-start-line="1735" selection-start-column="8" selection-end-line="1735" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseModules/FileIO.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2950">
+          <caret line="125" column="4" lean-forward="false" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
+          <folding>
+            <marker date="1530670890895" expanded="true" signature="9649:9663" ph="select * fro... missing_value" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Submit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="21" column="11" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zip.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" column="48" lean-forward="false" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseModules/DataPreProcess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="254" column="4" lean-forward="false" selection-start-line="254" selection-start-column="4" selection-end-line="254" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Integration/LearnPreprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="391" column="4" lean-forward="false" selection-start-line="391" selection-start-column="4" selection-end-line="391" selection-end-column="4" />
+          <folding>
+            <element signature="e#23#63#0" expanded="true" />
+            <element signature="e#11865#11892#0" expanded="false" />
+            <element signature="e#13586#13643#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/tools/anaconda2/Lib/site-packages/h2o/grid/grid_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="763" column="8" lean-forward="false" selection-start-line="763" selection-start-column="8" selection-end-line="763" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseModules/Modeling.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="415" column="4" lean-forward="false" selection-start-line="415" selection-start-column="4" selection-end-line="415" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Integration/LearnTrain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseModules/Report.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1389">
+          <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Integration/LearnMain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="260" column="47" lean-forward="true" selection-start-line="260" selection-start-column="47" selection-end-line="260" selection-end-column="47" />
-          <folding />
+        <state relative-caret-position="200">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding>
+            <element signature="e#11297#11319#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
